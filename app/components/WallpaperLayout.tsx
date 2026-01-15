@@ -69,11 +69,12 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
             <div style={{ display: 'flex', flex: 1 }}>
             </div>
             {/* Footer / Stats */}
-            <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', fontSize: `${s.statSize}px`, fontWeight: 'bold', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', width: '100%', fontSize: `${s.statSize}px`, fontWeight: 'bold', marginBottom: '40px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Passed</span>
                     <span style={{ color: activeColor }}>{progress.percentage}%</span>
                 </div>
+                <div style={{ width: '50px' }}></div>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Remaining</span>
                     <span>{progress.daysLeft}</span>
@@ -131,7 +132,7 @@ function DotsWidget({ progress, color, muted, width, dotSize, gap }: { progress:
             flexWrap: 'wrap',
             width: `${width}px`,
             gap: `${gap}px`,
-            justifyContent: 'start',
+            justifyContent: 'flex-start',
             alignContent: 'center'
         }}>
             {dots.map((isPassed, i) => (
