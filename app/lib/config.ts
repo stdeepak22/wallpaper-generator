@@ -56,7 +56,7 @@ const DEVICE_STYLES = [{
   height: deviceHeight.h2340,
   styles: {
     headerSize: 65, subHeaderSize: 30, statSize: 46,
-    widgetSize: 750, widgetTextSize: 120, widgetLabelSize: 48,
+    widgetSize: 840, widgetTextSize: 120, widgetLabelSize: 48,
     donutStroke: 40, dotSize: 30, dotGap: 18
   },
 },
@@ -65,18 +65,17 @@ const DEVICE_STYLES = [{
   height: deviceHeight.h2556,
   styles: {
     headerSize: 71, subHeaderSize: 32, statSize: 50,
-    widgetSize: 790, widgetTextSize: 130, widgetLabelSize: 52,
-    donutStroke: 44, dotSize: 30, dotGap: 20
+    widgetSize: 939, widgetTextSize: 130, widgetLabelSize: 52,
+    donutStroke: 44, dotSize: 33, dotGap: 20
   },
 },
-
 {
   width: deviceWidth.w1206,
   height: deviceHeight.h2622,
   styles: {
     headerSize: 72, subHeaderSize: 34, statSize: 52,
-    widgetSize: 870, widgetTextSize: 145, widgetLabelSize: 57,
-    donutStroke: 48, dotSize: 33, dotGap: 22
+    widgetSize: 966, widgetTextSize: 145, widgetLabelSize: 57,
+    donutStroke: 48, dotSize: 34, dotGap: 22
   },
 },
 {
@@ -84,8 +83,8 @@ const DEVICE_STYLES = [{
   height: deviceHeight.h2796,
   styles: {
     headerSize: 77, subHeaderSize: 36, statSize: 54,
-    widgetSize: 870, widgetTextSize: 145, widgetLabelSize: 57,
-    donutStroke: 48, dotSize: 33, dotGap: 22
+    widgetSize: 1050, widgetTextSize: 145, widgetLabelSize: 57,
+    donutStroke: 48, dotSize: 38, dotGap: 23
   },
 },
 {
@@ -93,8 +92,8 @@ const DEVICE_STYLES = [{
   height: deviceHeight.h2868,
   styles: {
     headerSize: 79, subHeaderSize: 37, statSize: 55,
-    widgetSize: 980, widgetTextSize: 155, widgetLabelSize: 60,
-    donutStroke: 48, dotSize: 37, dotGap: 25
+    widgetSize: 1080, widgetTextSize: 155, widgetLabelSize: 60,
+    donutStroke: 48, dotSize: 39, dotGap: 25
   },
 },
 ];

@@ -69,7 +69,7 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                 padding: '20px 0'
             }}>
                 {config.widget === 'donut' && (
-                    <DonutWidget progress={progress} color={activeColor} size={s.widgetSize} textSize={s.widgetTextSize} strokeWidth={s.donutStroke} />
+                    <DonutWidget progress={progress} color={activeColor} size={s.widgetSize * 0.80} textSize={s.widgetTextSize} strokeWidth={s.donutStroke} />
                 )}
                 {config.widget === 'dots' && (
                     <DotsWidget progress={progress} color={activeColor} muted={theme.text} width={s.widgetSize} dotSize={s.dotSize} gap={s.dotGap} />
@@ -85,14 +85,20 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                 width: '100%',
                 fontSize: `${s.statSize}px`,
                 fontWeight: 'bold',
-                marginBottom: '120px'
+                marginBottom: '110px'
             }}>
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center'
                 }}>
-                    <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Passed</span>
+                    <span style={{
+                        fontSize: `${s.subHeaderSize}px`,
+                        opacity: 0.6,
+                        marginBottom: '8px'
+                    }}>
+                        Passed
+                    </span>
                     <span style={{ color: activeColor }}>{progress.percentage}%</span>
                 </div>
                 <div style={{ width: '50px' }}></div>
@@ -101,8 +107,14 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                     flexDirection: 'column',
                     alignItems: 'center'
                 }}>
-                    <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Remaining</span>
-                    <span>{progress.daysLeft}</span>
+                    <span style={{
+                        fontSize: `${s.subHeaderSize}px`,
+                        opacity: 0.6,
+                        marginBottom: '8px'
+                    }}>
+                        Remaining
+                    </span>
+                    <span style={{ color: activeColor }}>{progress.daysLeft}</span>
                 </div>
             </div>
         </div>
@@ -147,8 +159,18 @@ function DonutWidget({ progress, color, size, textSize, strokeWidth }: { progres
                     transform={`rotate(-90 ${center} ${center})`}
                 />
             </svg>
-            <div style={{ position: 'absolute', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <span style={{ fontSize: `${textSize}px`, fontWeight: 'bold' }}>{progress.year}</span>
+            <div style={{
+                position: 'absolute',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+            }}>
+                <span style={{
+                    fontSize: `${textSize}px`,
+                    fontWeight: 'bold'
+                }}>
+                    {progress.year}
+                </span>
             </div>
         </div>
     );
@@ -183,11 +205,27 @@ function DotsWidget({ progress, color, muted, width, dotSize, gap }: { progress:
 
 function TextWidget({ progress, color, textSize, labelSize }: { progress: any, color: string, textSize: number, labelSize: number }) {
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-            <span style={{ fontSize: `${textSize}px`, fontWeight: 900, lineHeight: 1, color: color }}>
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            marginTop: '25%'
+        }}>
+            <span style={{
+                fontSize: `${textSize}px`,
+                fontWeight: 900,
+                lineHeight: 1,
+                color: color
+            }}>
                 {progress.daysLeft}
             </span>
-            <span style={{ fontSize: `${labelSize}px`, marginTop: '20px' }}>DAYS LEFT</span>
+            <span style={{
+                fontSize: `${labelSize}px`,
+                marginTop: '20px'
+            }}>
+                DAYS LEFT
+            </span>
         </div>
     );
 }
