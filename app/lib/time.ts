@@ -29,5 +29,6 @@ export function getYearProgress(timezone: string = 'UTC') {
         percentage,
         dateString: format(zonedDate, 'EEEE, d MMMM'),
         timeString: format(zonedDate, 'h:mm a'),
+        generatedAt: format(zonedDate, "HH:mm' on 'dd MMM"),
     };
 }

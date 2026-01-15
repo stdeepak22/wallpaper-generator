@@ -78,7 +78,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen p-4 md:p-8 bg-neutral-900 text-white flex flex-col md:flex-row gap-8 items-start justify-center">
+    <main className="min-h-screen p-4 md:p-8 bg-neutral-900 text-white flex flex-col-reverse md:flex-row gap-8 items-start justify-center">
 
       {/* Editor Panel */}
       <div className="w-full md:w-96 flex flex-col gap-6 bg-neutral-800 p-6 rounded-2xl shadow-xl">
@@ -194,8 +194,8 @@ export default function Home() {
                 setTimeout(() => setCopied(false), 2000);
               }}
               className={`text-white text-sm py-2 rounded font-medium transition-all transform active:scale-95 ${copied
-                  ? 'bg-green-600 hover:bg-green-500 shadow-[0_0_15px_rgba(22,163,74,0.5)]'
-                  : 'bg-blue-600 hover:bg-blue-500'
+                ? 'bg-green-600 hover:bg-green-500 shadow-[0_0_15px_rgba(22,163,74,0.5)]'
+                : 'bg-blue-600 hover:bg-blue-500'
                 }`}
             >
               {copied ? 'Copied! ✨' : 'Copy Link'}
@@ -221,7 +221,12 @@ export default function Home() {
         style={{ aspectRatio: `${selectedModel.width}/${selectedModel.height}` }}
       >
         {/* Notch */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-black rounded-b-xl z-20 pointer-events-none"></div>
+        <div
+          className={`absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-black z-20 pointer-events-none transition-all duration-300 ${selectedModel.name.includes('13') || selectedModel.name.includes('14')
+            ? 'rounded-b-xl'
+            : 'mt-[15px] rounded-[22px]'
+            }`}
+        />
 
         {/* Live Component Scaled Down */}
         <div

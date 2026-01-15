@@ -117,6 +117,16 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                     <span style={{ color: activeColor }}>{progress.daysLeft}</span>
                 </div>
             </div>
+
+            {/* Timestamp Footer */}
+            <div style={{
+                display: 'flex',
+                bottom: '0px',
+                fontSize: '32px',
+                opacity: 0.9,
+            }}>
+                generated at - {progress.generatedAt}
+            </div>
         </div>
     );
 }

@@ -46,6 +46,9 @@ export async function GET(request: NextRequest) {
         {
             width,
             height,
+            headers: {
+                'Cache-Control': 'public, max-age=86400, immutable',
+            }
         }
     );
 }
