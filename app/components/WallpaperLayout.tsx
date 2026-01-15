@@ -39,10 +39,15 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                 fontFamily: 'sans-serif',
             }}
         >
-            <div style={{ display: 'flex', flex: 1 }}>
+            <div style={{ height: '25%' }}>
             </div>
             {/* Header Area */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '100px' }}>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                minHeight: '100px'
+            }}>
                 <p style={{
                     fontSize: `${s.headerSize}px`, // Dynamic
                     fontWeight: 800,
@@ -55,7 +60,14 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
             </div>
 
             {/* Main Widget */}
-            <div style={{ display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'center', width: '100%', padding: '20px 0' }}>
+            <div style={{
+                display: 'flex',
+                flex: 1,
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                width: '100%',
+                padding: '20px 0'
+            }}>
                 {config.widget === 'donut' && (
                     <DonutWidget progress={progress} color={activeColor} size={s.widgetSize} textSize={s.widgetTextSize} strokeWidth={s.donutStroke} />
                 )}
@@ -66,16 +78,29 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                     <TextWidget progress={progress} color={activeColor} textSize={s.widgetTextSize} labelSize={s.widgetLabelSize} />
                 )}
             </div>
-            <div style={{ display: 'flex', flex: 1 }}>
-            </div>
             {/* Footer / Stats */}
-            <div style={{ display: 'flex', justifyContent: 'center', width: '100%', fontSize: `${s.statSize}px`, fontWeight: 'bold', marginBottom: '80px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%',
+                fontSize: `${s.statSize}px`,
+                fontWeight: 'bold',
+                marginBottom: '120px'
+            }}>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
                     <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Passed</span>
                     <span style={{ color: activeColor }}>{progress.percentage}%</span>
                 </div>
                 <div style={{ width: '50px' }}></div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
                     <span style={{ fontSize: `${s.subHeaderSize}px`, opacity: 0.6, marginBottom: '8px' }}>Remaining</span>
                     <span>{progress.daysLeft}</span>
                 </div>
@@ -91,7 +116,12 @@ function DonutWidget({ progress, color, size, textSize, strokeWidth }: { progres
     const offset = circumference - (parseFloat(progress.percentage) / 100) * circumference;
 
     return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative'
+        }}>
             <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
                 {/* Background Circle */}
                 <circle
@@ -133,7 +163,7 @@ function DotsWidget({ progress, color, muted, width, dotSize, gap }: { progress:
             width: `${width}px`,
             gap: `${gap}px`,
             justifyContent: 'flex-start',
-            alignContent: 'center'
+            alignContent: 'flex-start'
         }}>
             {dots.map((isPassed, i) => (
                 <div
