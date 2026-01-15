@@ -85,7 +85,7 @@ export function WallpaperLayout({ config, model }: { config: WallpaperConfig, mo
                 width: '100%',
                 fontSize: `${s.statSize}px`,
                 fontWeight: 'bold',
-                marginBottom: '110px'
+                marginBottom: '90px'
             }}>
                 <div style={{
                     display: 'flex',
