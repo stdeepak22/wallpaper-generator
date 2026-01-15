@@ -53,6 +53,7 @@ export default function Home() {
   }, [config, selectedModel, mounted]);
 
   const [generatedUrl, setGeneratedUrl] = useState('');
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     // Generate the URL based on current config
@@ -187,10 +188,17 @@ export default function Home() {
               {generatedUrl}
             </span>
             <button
-              onClick={() => navigator.clipboard.writeText(generatedUrl)}
-              className="bg-blue-600 hover:bg-blue-500 text-white text-sm py-2 rounded font-medium transition-colors"
+              onClick={() => {
+                navigator.clipboard.writeText(generatedUrl);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+              }}
+              className={`text-white text-sm py-2 rounded font-medium transition-all transform active:scale-95 ${copied
+                  ? 'bg-green-600 hover:bg-green-500 shadow-[0_0_15px_rgba(22,163,74,0.5)]'
+                  : 'bg-blue-600 hover:bg-blue-500'
+                }`}
             >
-              Copy Link
+              {copied ? 'Copied! ✨' : 'Copy Link'}
             </button>
           </div>
 
